@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Mrs.BusyBusyPresident ✨</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#ff4d6d',
+            primaryLight: '#ff85a2',
+            secondary: '#ffccd5',
+            accent: '#d81159',
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 3s infinite',
+            'bounce-slow': 'bounce 3s infinite',
+            'spin-slow': 'spin 8s linear infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <style>
+    .font-dancing {
+      font-family: 'Dancing Script', cursive;
+    }
+    .font-mont {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .gradient-text {
+      background: linear-gradient(45deg, #ff4d6d, #ff85a2);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .gradient-bg {
+      background: linear-gradient(45deg, #ff4d6d, #ff85a2);
+    }
+    .secondary-gradient {
+      background: linear-gradient(135deg, #ffccd5, #ff99ac);
+    }
+    .accent-gradient {
+      background: linear-gradient(90deg, #d81159, #ff758f);
+    }
+    .heart {
+      position: relative;
+      width: 100px;
+      height: 90px;
+      transform: rotate(45deg);
+    }
+    .heart:before,
+    .heart:after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 90px;
+      border-radius: 50%;
+      background: inherit;
+    }
+    .heart:before {
+      top: -45px;
+      left: 0;
+    }
+    .heart:after {
+      top: 0;
+      left: -45px;
+    }
+    .memory-card {
+      perspective: 1000px;
+      transform-style: preserve-3d;
+      transition: transform 0.6s;
+    }
+    .memory-card.flip {
+      transform: rotateY(180deg);
+    }
+    .memory-card .front,
+    .memory-card .back {
+      backface-visibility: hidden;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    .memory-card .front {
+      transform: rotateY(180deg);
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) scale(0.6); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 0.8; }
+      100% { transform: translateY(-100px) scale(1); opacity: 0; }
+    }
+    .floating-heart {
+      animation: floatUp 15s linear infinite;
+    }
+    @keyframes explode {
+      0% { transform: translate(-50%, -50%) scale(0.1); opacity: 1; }
+      50% { opacity: 1; }
+      100% { transform: translate(var(--tx), var(--ty)) scale(0.1); opacity: 0; }
+    }
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      animation: explode var(--duration) ease-out forwards;
+    }
+    .blast-blur {
+      animation: fadeInOut 4s forwards;
+      backdrop-filter: blur(8px);
+    }
+    @keyframes fadeInOut {
+      0% { opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+    @keyframes heartbeat {
+      0% { transform: scale(1); }
+      25% { transform: scale(1.1); }
+      40% { transform: scale(1); }
+      60% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    .heartbeat-animation {
+      animation: heartbeat 1.5s infinite;
+    }
+
+    @keyframes float-note {
+      0%, 100% { transform: translateY(0) rotate(-2deg); }
+      50% { transform: translateY(-10px) rotate(2deg); }
+    }
+
+    .photo-container:hover img {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
+  </style>
+</head>
+<body class="font-mont bg-pink-50 text-gray-800 overflow-x-hidden min-h-screen">
+  <!-- Loading Screen -->
+  <div id="loadingScreen" class="fixed inset-0 bg-primary flex items-center justify-center z-50 transition-opacity duration-1000">
+    <div class="text-white text-3xl md:text-4xl animate-pulse">Preparing your special surprise...</div>
+  </div>
+
+  <!-- Birthday Blast Animation -->
+  <div id="birthdayBlastAnimation" class="fixed inset-0 bg-black flex items-center justify-center z-40 flex-col">
+    <div class="relative w-80 h-80">
+      <!-- Birthday cake -->
+      <div class="cake absolute left-1/2 transform -translate-x-1/2 w-48 h-48 opacity-0 scale-0" style="transition: all 0.8s ease-out;">
+        <div class="cake-base w-48 h-32 bg-pink-200 rounded-lg relative overflow-hidden">
+          <div class="cake-middle w-48 h-12 bg-pink-300 absolute -top-6"></div>
+          <div class="cake-top w-48 h-12 bg-pink-100 absolute -top-12 rounded-t-lg"></div>
+          <!-- Candles -->
+          <div class="candle absolute top-[-25px] left-1/4 w-2 h-12 bg-gradient-to-b from-yellow-200 to-yellow-400"></div>
+          <div class="candle absolute top-[-25px] left-1/2 w-2 h-12 bg-gradient-to-b from-yellow-200 to-yellow-400"></div>
+          <div class="candle absolute top-[-25px] left-3/4 w-2 h-12 bg-gradient-to-b from-yellow-200 to-yellow-400"></div>
+          <!-- Flames -->
+          <div class="flame absolute top-[-35px] left-[calc(25%-3px)] w-8 h-8 bg-gradient-to-t from-orange-500 to-yellow-300 rounded-full animate-pulse"></div>
+          <div class="flame absolute top-[-35px] left-[calc(50%-3px)] w-8 h-8 bg-gradient-to-t from-orange-500 to-yellow-300 rounded-full animate-pulse"></div>
+          <div class="flame absolute top-[-35px] left-[calc(75%-3px)] w-8 h-8 bg-gradient-to-t from-orange-500 to-yellow-300 rounded-full animate-pulse"></div>
+        </div>
+      </div>
+      
+      <!-- Text elements that will animate -->
+      <div class="blast-text absolute w-full text-center opacity-0 transform scale-0" style="transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
+        <div class="happy text-5xl md:text-7xl font-dancing font-bold text-primary mb-4">Happy</div>
+      </div>
+      <div class="blast-text-2 absolute w-full text-center top-32 opacity-0 transform scale-0" style="transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
+        <div class="birthday text-6xl md:text-8xl font-dancing font-bold text-pink-400 mb-2">Birthday</div>
+      </div>
+      <div class="blast-text-3 absolute w-full text-center top-72 opacity-0 transform scale-0" style="transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
+        <div class="name text-4xl md:text-6xl font-dancing font-bold gradient-text">Mrs.BusyPresident ♥</div>
+      </div>
+      
+      <!-- Exploding particles that will shoot out -->
+      <div id="blastParticles" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+    </div>
+  </div>
+
+  <!-- Floating Hearts Background -->
+  <div id="floatingHearts" class="fixed inset-0 overflow-hidden pointer-events-none z-0"></div>
+
+  <!-- Main Container -->
+  <div class="relative z-10 container mx-auto px-4 py-8 max-w-6xl">
+    <!-- Header -->
+    <h1 class="gradient-text text-4xl md:text-5xl lg:text-6xl font-bold text-center my-8 md:my-12 opacity-0 transform scale-50 transition-all duration-1000" id="mainTitle">
+      Happy Birthday Mrs.BusyPresident!
+    </h1>
+    
+    <!-- Quote Carousel -->
+    <div class="mx-auto w-full max-w-3xl my-12">
+      <div class="bg-white bg-opacity-90 backdrop-blur rounded-2xl shadow-xl p-6 md:p-8 transition-all duration-700" id="quoteContainer">
+        <div class="quote-carousel relative h-full" id="quoteCarousel">
+          <div class="quote active opacity-100 transition-all duration-700 text-lg md:text-xl text-center italic text-pink-800">
+            "Even though you're just my best friend, my heart never stopped loving you — not even for a moment."
+          </div>
+          <div class="quote hidden opacity-0 transition-all duration-700 text-lg md:text-xl text-center italic text-pink-800">
+            "In the cabinet of my heart, you'll always be the leader. Happy Birthday madam ❤️!"
+          </div>
+          <div class="quote hidden opacity-0 transition-all duration-700 text-lg md:text-xl text-center italic text-pink-800">
+            "Even though you're just my best friend, my heart never stopped loving you — not even for a moment."
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 my-12">
+      <!-- Photos Section -->
+      <div class="photos-section">
+        <h3 class="text-2xl font-semibold mb-6 text-center gradient-text">Our Special Moments</h3>
+        <div class="photos-gallery grid grid-cols-1 gap-6">
+          <div class="photo-container relative overflow-hidden rounded-xl shadow-lg group transition-all duration-500 transform hover:scale-105">
+            <img src="/images/lali1.png" alt="Special Moment 1" class="w-full h-65 " />
+            <div class="photo-caption absolute bottom-0 left-0 right-0 bg-primary bg-opacity-90 text-white p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+             The first pic which was taken by me Mr.BusyPrimeMinister ❤️
+            </div>
+          </div>
+          <div class="photo-container relative overflow-hidden rounded-xl shadow-lg group transition-all duration-500 transform hover:scale-105 mt-6">
+            <img src="/images/weboth.png" alt="Special Moment 2" class="w-full h-70" />
+            <div class="photo-caption absolute bottom-0 left-0 right-0 bg-primary bg-opacity-90 text-white p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+              The First Selfie of us together ❤️
+            </div>
+          </div>
+          <div class="photo-container relative overflow-hidden rounded-xl shadow-lg group transition-all duration-500 transform hover:scale-105 mt-6">
+            <img src="/images/her.png" alt="Special Moment 3" class="w-full h-70 " />
+            <div class="photo-caption absolute bottom-0 left-0 right-0 bg-primary bg-opacity-90 text-white p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                The first picture you sent me of you in traditional dress ❤️
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Game Section -->
+      <div class="game-section">
+        <button id="playButton" class="gradient-bg text-white text-lg font-semibold py-4 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl mx-auto block opacity-0">
+          Play A Special Birthday Game
+        </button>
+        
+        <div id="gameContainer" class="bg-white bg-opacity-90 backdrop-blur rounded-2xl shadow-xl p-6 mt-6 opacity-0 transform translate-y-10 transition-all duration-500">
+          <h3 class="text-2xl font-semibold mb-4 text-center gradient-text">Match the Love Cards</h3>
+          <p class="text-center mb-6 text-gray-600">Find all matching pairs to reveal a special message!</p>
+          
+          <div class="memory-game grid grid-cols-3 md:grid-cols-4 gap-4">
+            <!-- Memory cards will be generated here -->
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Timeline Section -->
+    <div class="timeline my-16 relative">
+      <div class="timeline-line absolute left-1/2 transform -translate-x-1/2 w-1 bg-primary h-full hidden md:block"></div>
+      
+      <div class="timeline-items space-y-6 md:space-y-0">
+        <div class="timeline-item md:w-5/12 md:ml-0 md:mr-auto p-6 bg-white bg-opacity-90 backdrop-blur rounded-xl shadow-lg opacity-0 transform translate-y-10 transition-all duration-500 md:mb-24 relative">
+          <div class="md:hidden w-4 h-4 bg-primary rounded-full absolute -left-6 top-1/2 transform -translate-y-1/2"></div>
+          <div class="hidden md:block w-6 h-6 bg-primary border-4 border-white rounded-full absolute -right-11 top-1/2 transform -translate-y-1/2"></div>
+          <div class="timeline-date font-bold text-primary mb-2">April 4 2023</div>
+          <div class="timeline-text text-gray-600">The first day we met at our tuition.❤️</div>
+        </div>
+        
+        <div class="timeline-item md:w-5/12 md:ml-auto md:mr-0 p-6 bg-white bg-opacity-90 backdrop-blur rounded-xl shadow-lg opacity-0 transform translate-y-10 transition-all duration-500 md:mb-24 relative">
+          <div class="md:hidden w-4 h-4 bg-primary rounded-full absolute -left-6 top-1/2 transform -translate-y-1/2"></div>
+          <div class="hidden md:block w-6 h-6 bg-primary border-4 border-white rounded-full absolute -left-11 top-1/2 transform -translate-y-1/2"></div>
+          <div class="timeline-date font-bold text-primary mb-2">June 19 2023</div>
+          <div class="timeline-text text-gray-600">The day you sent me a picture of yourself in a saree just for me. ❤️</div>
+        </div>
+        
+        <div class="timeline-item md:w-5/12 md:ml-0 md:mr-auto p-6 bg-white bg-opacity-90 backdrop-blur rounded-xl shadow-lg opacity-0 transform translate-y-10 transition-all duration-500 md:mb-24 relative">
+          <div class="md:hidden w-4 h-4 bg-primary rounded-full absolute -left-6 top-1/2 transform -translate-y-1/2"></div>
+          <div class="hidden md:block w-6 h-6 bg-primary border-4 border-white rounded-full absolute -right-11 top-1/2 transform -translate-y-1/2"></div>
+          <div class="timeline-date font-bold text-primary mb-2">May 22 2023</div>
+          <div class="timeline-text text-gray-600">The day that was our last long drive, when we had panipuri together ❤️</div>
+        </div>
+        
+        <div class="timeline-item md:w-5/12 md:ml-auto md:mr-0 p-6 bg-white bg-opacity-90 backdrop-blur rounded-xl shadow-lg opacity-0 transform translate-y-10 transition-all duration-500 relative">
+          <div class="md:hidden w-4 h-4 bg-primary rounded-full absolute -left-6 top-1/2 transform -translate-y-1/2"></div>
+          <div class="hidden md:block w-6 h-6 bg-primary border-4 border-white rounded-full absolute -left-11 top-1/2 transform -translate-y-1/2"></div>
+          <div class="timeline-date font-bold text-primary mb-2">Today</div>
+          <div class="timeline-text text-gray-600">Celebrating another year of your amazing life!</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Signature -->
+    <p class="font-dancing text-3xl md:text-4xl text-center my-16 text-pink-800 opacity-0" id="signature">
+      With all my love,<br>Mr.BusyPrimeMinister
+    </p>
+  </div>
+  
+  <!-- Win Message -->
+  <div id="winMessage" class="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-md z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full p-8 text-center">
+      <h2 class="gradient-text text-3xl md:text-4xl font-bold mb-6 animate-pulse-slow">🎉 Congratulations! 🎉</h2>
+      <p class="text-lg mb-4">You've matched all the cards!</p>
+      <p class="text-pink-800 italic text-lg mb-6">"In the busy world of politics, you are my most important constituent. I pledge my eternal love to you today and always."</p>
+      <p class="font-dancing text-2xl text-pink-700 mb-8">Happy Birthday from your loving Mr.BusyPrimeMinister ❤️</p>
+      <button onclick="closeWinMessage()" class="gradient-bg text-white py-3 px-8 rounded-full font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105">Close</button>
+    </div>
+  </div>
+
+  <!-- Confetti Canvas -->
+  <canvas id="confetti" class="fixed inset-0 pointer-events-none z-30"></canvas>
+
+  <!-- Music Player -->
+  <div id="musicPlayer" class="fixed bottom-6 right-6 bg-white bg-opacity-90 backdrop-blur rounded-full shadow-lg p-3 flex items-center space-x-3 z-20 transform translate-y-20 opacity-0 transition-all duration-500">
+    <button id="musicToggle" class="gradient-bg text-white w-12 h-12 rounded-full flex items-center justify-center shadow transition-transform duration-300 hover:scale-110">
+      ▶️
+    </button>
+    <div class="music-info pr-4 hidden md:block">
+      <div class="music-title font-semibold text-primary text-sm">Happy Birthday Mr.BusyPresident ❤️</div>
+      <div class="music-artist text-gray-500 text-xs">Special Edition</div>
+    </div>
+  </div>
+
+  <!-- Heart Balloons -->
+  <div id="heartBalloons"></div>
+
+  <script>
+    // Loading screen and birthday blast sequence
+    window.addEventListener('load', function() {
+      setTimeout(() => {
+        const loadingScreen = document.getElementById('loadingScreen');
+        loadingScreen.style.opacity = '0';
+        setTimeout(() => {
+          loadingScreen.style.display = 'none';
+          startBirthdayBlast();
+        }, 1000);
+      }, 2000);
+    });
+
+    // Start birthday blast animation
+    function startBirthdayBlast() {
+      const blastAnimation = document.getElementById('birthdayBlastAnimation');
+      const cake = document.querySelector('.cake');
+      const blastText1 = document.querySelector('.blast-text');
+      const blastText2 = document.querySelector('.blast-text-2');
+      const blastText3 = document.querySelector('.blast-text-3');
+      
+      // Fade in cake
+      setTimeout(() => {
+        cake.style.opacity = '1';
+        cake.style.transform = 'translateX(-50%) scale(1)';
+      }, 300);
+      
+      // Animate text elements
+      setTimeout(() => {
+        blastText1.style.opacity = '1';
+        blastText1.style.transform = 'scale(1)';
+      }, 800);
+      
+      setTimeout(() => {
+        blastText2.style.opacity = '1';
+        blastText2.style.transform = 'scale(1)';
+      }, 1400);
+      
+      setTimeout(() => {
+        blastText3.style.opacity = '1';
+        blastText3.style.transform = 'scale(1)';
+      }, 2000);
+      
+      // Create explosion particles
+      setTimeout(() => {
+        createExplosionParticles();
+      }, 2800);
+      
+      // End animation and show main content
+      setTimeout(() => {
+        blastAnimation.style.opacity = '0';
+        setTimeout(() => {
+          blastAnimation.style.display = 'none';
+          startAnimations();
+        }, 500);
+      }, 4000);
+    }
+
+    // Create explosion particles effect
+    function createExplosionParticles() {
+      const particlesContainer = document.getElementById('blastParticles');
+      const colors = ['#ff4d6d', '#ff758f', '#ff8fa3', '#ffb3c1', '#d81159', '#ffccd5', '#ff99ac', '#ffd6e0'];
+      const totalParticles = 100;
+      
+      for (let i = 0; i < totalParticles; i++) {
+        const particle = document.createElement('div');
+        const size = Math.random() * 12 + 8;
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        const angle = Math.random() * Math.PI * 2; // Random angle in radians
+        const distance = 50 + Math.random() * 350; // Random distance from center
+        const duration = 1.5 + Math.random() * 1; // Animation duration
+        
+        // Calculate final position based on angle and distance
+        const tx = Math.cos(angle) * distance;
+        const ty = Math.sin(angle) * distance;
+        
+        particle.className = 'particle';
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.backgroundColor = color;
+        particle.style.setProperty('--tx', `${tx}px`);
+        particle.style.setProperty('--ty', `${ty}px`);
+        particle.style.setProperty('--duration', `${duration}s`);
+        
+        particlesContainer.appendChild(particle);
+      }
+      
+      // Create heart-shaped particles
+      for (let i = 0; i < 20; i++) {
+        const heartParticle = document.createElement('div');
+        const size = Math.random() * 20 + 10;
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        const angle = Math.random() * Math.PI * 2;
+        const distance = 50 + Math.random() * 300;
+        const duration = 1.5 + Math.random() * 1;
+        
+        const tx = Math.cos(angle) * distance;
+        const ty = Math.sin(angle) * distance;
+        
+        heartParticle.className = 'particle heart';
+        heartParticle.style.width = `${size}px`;
+        heartParticle.style.height = `${size * 0.9}px`;
+        heartParticle.style.backgroundColor = color;
+        heartParticle.style.setProperty('--tx', `${tx}px`);
+        heartParticle.style.setProperty('--ty', `${ty}px`);
+        heartParticle.style.setProperty('--duration', `${duration}s`);
+        heartParticle.style.transform = 'rotate(45deg)';
+        
+        // Add heart shape
+        const before = document.createElement('div');
+        before.style.position = 'absolute';
+        before.style.width = '100%';
+        before.style.height = '100%';
+        before.style.backgroundColor = color;
+        before.style.borderRadius = '50%';
+        before.style.top = '-45%';
+        
+        const after = document.createElement('div');
+        after.style.position = 'absolute';
+        after.style.width = '100%';
+        after.style.height = '100%';
+        after.style.backgroundColor = color;
+        after.style.borderRadius = '50%';
+        after.style.left = '-45%';
+        
+        heartParticle.appendChild(before);
+        heartParticle.appendChild(after);
+        particlesContainer.appendChild(heartParticle);
+      }
+    }
+
+    // Add this function right before startAnimations()
+
+    // Create a romantic surprise animation when she clicks on certain elements
+    function addLoveableInteractions() {
+      // Add heart trail to mouse cursor
+      document.addEventListener('mousemove', createHeartTrail);
+      
+      // Add floating love notes that appear occasionally
+      setInterval(showRandomLoveNote, 25000);
+      
+      // Make the main title respond to hover with heartbeats
+      const mainTitle = document.getElementById('mainTitle');
+      if (mainTitle) {
+        mainTitle.addEventListener('mouseenter', function() {
+          this.classList.add('heartbeat-animation');
+          spawnHeartBurst(this);
+        });
+        mainTitle.addEventListener('mouseleave', function() {
+          this.classList.remove('heartbeat-animation');
+        });
+      }
+      
+      // Add hidden images that show on special clicks
+      const signature = document.getElementById('signature');
+      if (signature) {
+        signature.addEventListener('click', revealSecretMessage);
+      }
+    }
+
+    // Create a trailing heart effect following the mouse
+    function createHeartTrail(e) {
+      // Limit the frequency of hearts
+      if (Math.random() > 0.1) return;
+      
+      const heart = document.createElement('div');
+      heart.className = 'fixed pointer-events-none z-20';
+      heart.style.left = `${e.clientX}px`;
+      heart.style.top = `${e.clientY}px`;
+      heart.style.opacity = '0.8';
+      
+      // Random heart size
+      const size = Math.random() * 12 + 8;
+      heart.innerHTML = `
+        <div class="heart" style="
+          width: ${size}px; 
+          height: ${size * 0.9}px; 
+          background-color: ${getRandomHeartColor()};
+          transform: rotate(45deg);
+        "></div>
+      `;
+      
+      document.body.appendChild(heart);
+      
+      // Heart trail animation
+      heart.animate([
+        { transform: 'translate(-50%, -50%) scale(0.8)', opacity: 0.8 },
+        { transform: `translate(-50%, ${-50 - Math.random() * 50}px) scale(${Math.random() * 0.5 + 0.5})`, opacity: 0 }
+      ], {
+        duration: 1000,
+        easing: 'ease-out'
+      }).onfinish = () => heart.remove();
+    }
+
+    // Get a random heart color
+    function getRandomHeartColor() {
+      const colors = [
+        '#ff4d6d', '#ff758f', '#ff8fa3', '#ffb3c1', '#d81159',
+        '#ff66b2', '#ff99cc', '#ff3385', '#cc0052', '#ff80ab'
+      ];
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    // Create a heart burst effect
+    function spawnHeartBurst(element) {
+      const rect = element.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      
+      for (let i = 0; i < 15; i++) {
+        const heart = document.createElement('div');
+        const size = Math.random() * 15 + 5;
+        const angle = Math.random() * Math.PI * 2;
+        const distance = Math.random() * 80 + 40;
+        
+        heart.className = 'fixed pointer-events-none z-25';
+        heart.style.width = `${size}px`;
+        heart.style.height = `${size * 0.9}px`;
+        heart.style.left = `${centerX}px`;
+        heart.style.top = `${centerY}px`;
+        
+        heart.innerHTML = `
+          <div class="heart" style="
+            width: 100%;
+            height: 100%;
+            background-color: ${getRandomHeartColor()};
+            transform: rotate(45deg);
+          "></div>
+        `;
+        
+        document.body.appendChild(heart);
+        
+        heart.animate([
+          { transform: 'translate(-50%, -50%) scale(0)', opacity: 0.9 },
+          { transform: `translate(calc(-50% + ${Math.cos(angle) * distance}px), calc(-50% + ${Math.sin(angle) * distance}px)) scale(${Math.random() * 0.5 + 0.5})`, opacity: 0 }
+        ], {
+          duration: 1000 + Math.random() * 500,
+          easing: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+        }).onfinish = () => heart.remove();
+      }
+    }
+
+    // Show random love notes that fade in and out
+    function showRandomLoveNote() {
+      const loveNotes = [
+        "You're the most beautiful person I've ever met ❤️",
+        "Every moment with you feels like magic ✨",
+        "Your smile brightens my darkest days 💫",
+        "I'm so lucky to have you in my life 💖",
+        "You make my heart skip a beat 💓",
+        "Forever yours, my love 💕",
+        "You are my favorite thought 🌹",
+        "My heart belongs to you always ❣️"
+      ];
+      
+      const note = document.createElement('div');
+      note.className = 'fixed z-30 pointer-events-none font-dancing text-primary text-xl md:text-2xl text-center px-4 py-2 bg-white bg-opacity-70 rounded-lg shadow-lg';
+      note.style.left = `${Math.random() * 60 + 20}%`;
+      note.style.top = `${Math.random() * 60 + 20}%`;
+      note.style.transform = 'translate(-50%, -50%) scale(0)';
+      note.textContent = loveNotes[Math.floor(Math.random() * loveNotes.length)];
+      
+      document.body.appendChild(note);
+      
+      // Love note animation
+      note.animate([
+        { transform: 'translate(-50%, -50%) scale(0)', opacity: 0 },
+        { transform: 'translate(-50%, -50%) scale(1.1)', opacity: 1, offset: 0.1 },
+        { transform: 'translate(-50%, -50%) scale(1)', opacity: 1, offset: 0.2 },
+        { transform: 'translate(-50%, -50%) scale(1)', opacity: 1, offset: 0.8 },
+        { transform: 'translate(-50%, -50%) scale(0)', opacity: 0 }
+      ], {
+        duration: 5000,
+        easing: 'ease-in-out'
+      }).onfinish = () => note.remove();
+      
+      // Add floating hearts around the note
+      setTimeout(() => {
+        for (let i = 0; i < 5; i++) {
+          const heart = document.createElement('div');
+          const size = Math.random() * 10 + 5;
+          const distance = 30 + Math.random() * 20;
+          const angle = Math.random() * Math.PI * 2;
+          const delay = i * 200;
+          
+          heart.className = 'fixed pointer-events-none z-29';
+          heart.style.left = `${note.offsetLeft + note.offsetWidth/2 + Math.cos(angle) * distance}px`;
+          heart.style.top = `${note.offsetTop + note.offsetHeight/2 + Math.sin(angle) * distance}px`;
+          heart.style.opacity = '0';
+          
+          heart.innerHTML = `
+            <div class="heart" style="
+              width: ${size}px; 
+              height: ${size * 0.9}px; 
+              background-color: ${getRandomHeartColor()};
+              transform: rotate(45deg);
+            "></div>
+          `;
+          
+          document.body.appendChild(heart);
+          
+          setTimeout(() => {
+            heart.animate([
+              { transform: 'scale(0)', opacity: 0 },
+              { transform: 'scale(1)', opacity: 0.8, offset: 0.2 },
+              { transform: 'scale(1)', opacity: 0.8, offset: 0.8 },
+              { transform: 'scale(0)', opacity: 0 }
+            ], {
+              duration: 4000 - delay,
+              easing: 'ease-in-out'
+            }).onfinish = () => heart.remove();
+          }, delay);
+        }
+      }, 500);
+    }
+
+    // Reveal a secret love message when the signature is clicked
+    function revealSecretMessage() {
+      const secretMessage = document.createElement('div');
+      secretMessage.className = 'fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-80 backdrop-filter backdrop-blur-sm';
+      secretMessage.style.opacity = '0';
+      secretMessage.innerHTML = `
+        <div class="bg-white bg-opacity-95 rounded-2xl p-8 max-w-lg text-center transform scale-0 transition-all duration-500">
+          <div class="text-3xl md:text-4xl font-dancing font-bold gradient-text mb-4">My Secret Message</div>
+          <p class="text-lg mb-6 text-gray-700 italic">
+            "I've written this secret message just for you. Every day I fall more deeply in love with your smile, 
+            your laugh, and the way you make me feel. You are my dream come true, and I cherish every moment with you. 
+            I'll always be there for you, today and forever."
+          </p>
+          <button class="gradient-bg text-white py-3 px-8 rounded-full font-bold hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+            I Love You Too
+          </button>
+        </div>
+      `;
+      
+      document.body.appendChild(secretMessage);
+      
+      // Fade in the background
+      secretMessage.animate([
+        { opacity: 0 },
+        { opacity: 1 }
+      ], {
+        duration: 800,
+        fill: 'forwards'
+      });
+      
+      // Pop in the message
+      const messageContent = secretMessage.querySelector('div');
+      setTimeout(() => {
+        messageContent.style.transform = 'scale(1)';
+        
+        // Add floating hearts around the message
+        for (let i = 0; i < 20; i++) {
+          setTimeout(() => {
+            const heart = document.createElement('div');
+            const size = Math.random() * 15 + 10;
+            heart.className = 'absolute';
+            heart.style.width = `${size}px`;
+            heart.style.height = `${size * 0.9}px`;
+            
+            const angle = Math.random() * Math.PI * 2;
+            const distance = Math.random() * 100 + 150;
+            
+            heart.style.left = `${50 + Math.cos(angle) * distance}%`;
+            heart.style.top = `${50 + Math.sin(angle) * distance}%`;
+            
+            heart.innerHTML = `
+              <div class="heart" style="
+                width: 100%;
+                height: 100%;
+                background-color: ${getRandomHeartColor()};
+                transform: rotate(45deg);
+                opacity: ${Math.random() * 0.5 + 0.3};
+              "></div>
+            `;
+            
+            secretMessage.appendChild(heart);
+            
+            heart.animate([
+              { transform: 'scale(0)' },
+              { transform: 'scale(1)', offset: 0.2 },
+              { transform: 'scale(1)', offset: 0.8 },
+              { transform: 'scale(0)' }
+            ], {
+              duration: 5000,
+              easing: 'ease-in-out'
+            });
+          }, i * 200);
+        }
+      }, 200);
+      
+      // Close on button click
+      const closeButton = secretMessage.querySelector('button');
+      closeButton.addEventListener('click', () => {
+        secretMessage.animate([
+          { opacity: 1 },
+          { opacity: 0 }
+        ], {
+          duration: 800,
+          fill: 'forwards'
+        }).onfinish = () => secretMessage.remove();
+        
+        // Create heart explosion on close
+        const rect = closeButton.getBoundingClientRect();
+        spawnHeartBurst(closeButton);
+      });
+    }
+
+    // Start all animations after loading
+    function startAnimations() {
+      createFloatingHearts();
+      createHeartBalloons();
+      initializeQuoteCarousel();
+      initializeTimeline();
+      setupMemoryGame();
+      setupMusicPlayer();
+      addLoveableInteractions();
+      
+      // Animate title
+      document.getElementById('mainTitle').classList.remove('opacity-0', 'scale-50');
+      
+      // Animate signature
+      setTimeout(() => {
+        document.getElementById('signature').classList.remove('opacity-0');
+        document.getElementById('signature').classList.add('animate-bounce-slow');
+      }, 1000);
+      
+      // Animate play button
+      setTimeout(() => {
+        document.getElementById('playButton').classList.remove('opacity-0');
+        document.getElementById('playButton').classList.add('animate-bounce-slow');
+      }, 1500);
+      
+      // Animate music player
+      setTimeout(() => {
+        const musicPlayer = document.getElementById('musicPlayer');
+        musicPlayer.classList.remove('translate-y-20', 'opacity-0');
+      }, 2000);
+
+      setTimeout(addLoveableInteractions, 5000);
+    }
+
+    // Create floating hearts background
+    function createFloatingHearts() {
+      const heartsContainer = document.getElementById('floatingHearts');
+      const heartColors = ['#ff4d6d', '#ff758f', '#ffccd5', '#ff99ac', '#d81159'];
+      
+      setInterval(() => {
+        const heart = document.createElement('div');
+        heart.className = 'floating-heart absolute';
+        heart.style.left = `${Math.random() * 100}vw`;
+        heart.style.bottom = '-50px';
+        heart.style.opacity = Math.random() * 0.5 + 0.2;
+        
+        // Create heart shape
+        const size = Math.random() * 20 + 10;
+        heart.innerHTML = `
+          <div class="heart" style="
+            width: ${size}px; 
+            height: ${size * 0.9}px; 
+            background-color: ${heartColors[Math.floor(Math.random() * heartColors.length)]};
+            transform: rotate(45deg) scale(${Math.random() * 0.3 + 0.7});
+          "></div>
+        `;
+        
+        // Set animation duration
+        heart.style.animationDuration = `${Math.random() * 10 + 10}s`;
+        
+        heartsContainer.appendChild(heart);
+        
+        // Remove heart after animation completes
+        setTimeout(() => heart.remove(), 20000);
+      }, 1000);
+    }
+
+    // Create interactive heart balloons
+    function createHeartBalloons() {
+      const colors = ['#ff4d6d', '#ff758f', '#ff8fa3', '#ffb3c1', '#d81159'];
+      const totalBalloons = 10;
+      const container = document.getElementById('heartBalloons');
+      
+      for (let i = 0; i < totalBalloons; i++) {
+        const balloon = document.createElement('div');
+        balloon.className = 'absolute z-10';
+        
+        const size = Math.random() * 30 + 40;
+        const xPos = Math.random() * 80 + 10;
+        const yPos = Math.random() * 50 + 20;
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        const delay = Math.random() * 2;
+        
+        balloon.innerHTML = `
+          <div class="heart animate-float" style="
+            width: ${size}px; 
+            height: ${size * 0.9}px; 
+            background-color: ${color};
+            transform: rotate(45deg);
+            animation-delay: ${delay}s;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+            cursor: pointer;
+          ">
+            <div class="string absolute w-0.5 h-20 bg-gray-400 opacity-60 
+              origin-top left-1/2 -bottom-20 transform -translate-x-1/2 rotate-45"></div>
+          </div>
+        `;
+        
+        balloon.style.left = `${xPos}vw`;
+        balloon.style.top = `${yPos}vh`;
+        container.appendChild(balloon);
+        
+        balloon.querySelector('.heart').addEventListener('click', () => popBalloon(balloon));
+      }
+    }
+
+    // Balloon pop animation
+    function popBalloon(balloon) {
+      const rect = balloon.getBoundingClientRect();
+      const x = rect.left + rect.width / 2;
+      const y = rect.top + rect.height / 2;
+      
+      // Create pop particles
+      for (let i = 0; i < 8; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'absolute rounded-full z-20';
+        particle.style.width = '8px';
+        particle.style.height = '8px';
+        particle.style.backgroundColor = '#ff4d6d';
+        particle.style.left = `${x}px`;
+        particle.style.top = `${y}px`;
+        
+        const angle = (i / 8) * Math.PI * 2;
+        const speed = 70 + Math.random() * 50;
+        
+        // Animate the particle
+        particle.animate([
+          { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+          { transform: `translate(${Math.cos(angle) * speed}px, ${Math.sin(angle) * speed}px) scale(0)`, opacity: 0 }
+        ], {
+          duration: 800,
+          easing: 'ease-out'
+        });
+        
+        document.body.appendChild(particle);
+        setTimeout(() => particle.remove(), 800);
+      }
+      
+      // Animate balloon disappearing
+      balloon.animate([
+        { transform: 'scale(1)', opacity: 1 },
+        { transform: 'scale(0)', opacity: 0 }
+      ], {
+        duration: 300,
+        easing: 'ease-in'
+      });
+      
+      setTimeout(() => balloon.remove(), 300);
+    }
+
+    // Initialize quote carousel
+    function initializeQuoteCarousel() {
+      const quotes = document.querySelectorAll('.quote');
+      let currentQuote = 0;
+      
+      setInterval(() => {
+        // Hide current quote
+        quotes[currentQuote].classList.add('opacity-0');
+        setTimeout(() => {
+          quotes[currentQuote].classList.add('hidden');
+          
+          // Show next quote
+          currentQuote = (currentQuote + 1) % quotes.length;
+          quotes[currentQuote].classList.remove('hidden');
+          
+          setTimeout(() => {
+            quotes[currentQuote].classList.remove('opacity-0');
+          }, 50);
+        }, 700);
+      }, 6000);
+    }
+
+    // Initialize timeline animation
+    function initializeTimeline() {
+      const timelineItems = document.querySelectorAll('.timeline-item');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove('opacity-0', 'translate-y-10');
+          }
+        });
+      }, { threshold: 0.3 });
+      
+      timelineItems.forEach(item => observer.observe(item));
+    }
+
+    // Setup memory game
+    function setupMemoryGame() {
+      const gameContainer = document.getElementById('gameContainer');
+      const memoryGameContainer = document.querySelector('.memory-game');
+      const playButton = document.getElementById('playButton');
+      
+      // Game data
+      const icons = ['❤️', '⭐', '💎', '🌹', '🎁', '👑'];
+      let cards = [];
+      let hasFlippedCard = false;
+      let lockBoard = false;
+      let firstCard, secondCard;
+      let matchedPairs = 0;
+      
+      // Create cards
+      function createCards() {
+        memoryGameContainer.innerHTML = '';
+        cards = [];
+        matchedPairs = 0;
+        
+        // Double the icons array to create pairs
+        const cardIcons = [...icons, ...icons];
+        
+        // Shuffle the array
+        cardIcons.sort(() => Math.random() - 0.5);
+        
+        // Create card elements
+        cardIcons.forEach((icon, index) => {
+          const card = document.createElement('div');
+          card.className = 'memory-card aspect-square shadow-md rounded-lg cursor-pointer';
+          card.dataset.icon = icon;
+          card.dataset.index = index;
+          
+          card.innerHTML = `
+            <div class="front gradient-bg flex items-center justify-center text-white text-3xl rounded-lg">
+              ${icon}
+            </div>
+            <div class="back accent-gradient flex items-center justify-center text-white text-3xl rounded-lg">
+              ?
+            </div>
+          `;
+          
+          memoryGameContainer.appendChild(card);
+          cards.push(card);
+          
+          card.addEventListener('click', flipCard);
+        });
+      }
+      
+      // Flip card function
+      function flipCard() {
+        if (lockBoard) return;
+        if (this === firstCard) return;
+        
+        this.classList.add('flip');
+        
+        if (!hasFlippedCard) {
+          hasFlippedCard = true;
+          firstCard = this;
+          return;
+        }
+        
+        secondCard = this;
+        checkForMatch();
+      }
+      
+      // Check if cards match
+      function checkForMatch() {
+        const isMatch = firstCard.dataset.icon === secondCard.dataset.icon;
+        
+        if (isMatch) {
+          disableCards();
+          matchedPairs++;
+          
+          if (matchedPairs === icons.length) {
+            setTimeout(() => {
+              showWinMessage();
+              startConfetti();
+            }, 1000);
+          }
+        } else {
+          unflipCards();
+        }
+      }
+      
+      // Disable matching cards
+      function disableCards() {
+        firstCard.removeEventListener('click', flipCard);
+        secondCard.removeEventListener('click', flipCard);
+        
+        // Add matching animation
+        firstCard.animate([
+          { transform: 'scale(1) rotateY(180deg)' },
+          { transform: 'scale(1.1) rotateY(180deg)' },
+          { transform: 'scale(1) rotateY(180deg)' }
+        ], {
+          duration: 500,
+          easing: 'ease'
+        });
+        
+        secondCard.animate([
+          { transform: 'scale(1) rotateY(180deg)' },
+          { transform: 'scale(1.1) rotateY(180deg)' },
+          { transform: 'scale(1) rotateY(180deg)' }
+        ], {
+          duration: 500,
+          easing: 'ease'
+        });
+        
+        resetBoard();
+      }
+      
+      // Unflip non-matching cards
+      function unflipCards() {
+        lockBoard = true;
+        
+        setTimeout(() => {
+          firstCard.classList.remove('flip');
+          secondCard.classList.remove('flip');
+          resetBoard();
+        }, 1500);
+      }
+      
+      // Reset board after each turn
+      function resetBoard() {
+        [hasFlippedCard, lockBoard] = [false, false];
+        [firstCard, secondCard] = [null, null];
+      }
+      
+      // Initialize game
+      playButton.addEventListener('click', function() {
+        createCards();
+        gameContainer.classList.remove('opacity-0', 'translate-y-10');
+        this.classList.add('opacity-0');
+        setTimeout(() => this.style.display = 'none', 500);
+      });
+    }
+
+    // Win message functions
+    function showWinMessage() {
+      const winMessage = document.getElementById('winMessage');
+      winMessage.classList.remove('hidden');
+      winMessage.classList.add('flex');
+    }
+
+    function closeWinMessage() {
+      const winMessage = document.getElementById('winMessage');
+      winMessage.classList.add('hidden');
+      winMessage.classList.remove('flex');
+    }
+
+    // Confetti animation
+    function startConfetti() {
+      const canvas = document.getElementById('confetti');
+      const ctx = canvas.getContext('2d');
+      
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      
+      // Confetti particles
+      const particles = [];
+      const colors = ['#ff4d6d', '#ff758f', '#ff8fa3', '#ffb3c1', '#d81159'];
+      const shapes = ['circle', 'square', 'heart'];
+      
+      // Create particles
+      for (let i = 0; i < 200; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height - canvas.height,
+          size: Math.random() * 8 + 6,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          shape: shapes[Math.floor(Math.random() * shapes.length)],
+          speedY: Math.random() * 2 + 1,
+          speedX: Math.random() * 2 - 1,
+          spin: Math.random() * 0.2 - 0.1,
+          angle: Math.random() * 360
+        });
+      }
+      
+      // Draw confetti
+      function drawConfetti() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        particles.forEach(p => {
+          ctx.save();
+          ctx.translate(p.x, p.y);
+          ctx.rotate(p.angle * Math.PI / 180);
+          
+          ctx.fillStyle = p.color;
+          
+          if (p.shape === 'heart') {
+            // Draw heart shape
+            ctx.beginPath();
+            ctx.moveTo(0, -p.size/2);
+            ctx.bezierCurveTo(
+              p.size/2, -p.size,
+              p.size, -p.size/2,
+              0, p.size/2
+            );
+            ctx.bezierCurveTo(
+              -p.size, -p.size/2,
+              -p.size/2, -p.size,
+              0, -p.size/2
+            );
+            ctx.fill();
+          } else if (p.shape === 'circle') {
+            // Draw circle
+            ctx.beginPath();
+            ctx.arc(0, 0, p.size/2, 0, Math.PI * 2);
+            ctx.fill();
+          } else {
+            // Draw square
+            ctx.fillRect(-p.size/2, -p.size/2, p.size, p.size);
+          }
+          
+          ctx.restore();
+          
+          // Update position
+          p.y += p.speedY;
+          p.x += p.speedX;
+          p.angle += p.spin;
+          
+          // Reset if offscreen
+          if (p.y > canvas.height) {
+            p.y = -p.size;
+            p.x = Math.random() * canvas.width;
+          }
+        });
+        
+        requestAnimationFrame(drawConfetti);
+      }
+      
+      drawConfetti();
+    }
+
+    // Music player functionality
+    function setupMusicPlayer() {
+      const musicToggle = document.getElementById('musicToggle');
+      // Create audio element
+      const audio = new Audio();
+      // We'll set a placeholder audio source
+      audio.src = "https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"; // This won't actually play, just a placeholder
+      audio.loop = true;
+      
+      let isPlaying = false;
+      
+      musicToggle.addEventListener('click', function() {
+        if (isPlaying) {
+          audio.pause();
+          musicToggle.innerHTML = '▶️';
+          musicToggle.classList.remove('animate-spin-slow');
+        } else {
+          audio.play().catch(e => {
+            // Handle autoplay restrictions
+            console.log('Audio playback was prevented by the browser');
+          });
+          musicToggle.innerHTML = '⏸️';
+          musicToggle.classList.add('animate-spin-slow');
+        }
+        isPlaying = !isPlaying;
+      });
+    }
+
+    // Enhanced background animations
+    function createEnhancedBackground() {
+      const backgroundContainer = document.getElementById('floatingHearts');
+      backgroundContainer.innerHTML = ''; // Clear existing content
+      
+      // Create animated gradient background
+      const gradientBg = document.createElement('div');
+      gradientBg.className = 'absolute inset-0 z-0';
+      gradientBg.style.background = 'linear-gradient(-45deg, #ffccd5, #ff85a2, #ff4d6d, #d81159)';
+      gradientBg.style.backgroundSize = '400% 400%';
+      gradientBg.style.animation = 'gradient 15s ease infinite';
+      gradientBg.style.opacity = '0.3';
+      backgroundContainer.appendChild(gradientBg);
+      
+      // Add animated circles/bubbles
+      for (let i = 0; i < 20; i++) {
+        const bubble = document.createElement('div');
+        const size = Math.random() * 100 + 50;
+        const colors = ['rgba(255, 77, 109, 0.2)', 'rgba(255, 133, 162, 0.2)', 
+                       'rgba(255, 204, 213, 0.2)', 'rgba(216, 17, 89, 0.2)'];
+        
+        bubble.className = 'absolute rounded-full';
+        bubble.style.width = `${size}px`;
+        bubble.style.height = `${size}px`;
+        bubble.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        bubble.style.left = `${Math.random() * 100}vw`;
+        bubble.style.top = `${Math.random() * 100}vh`;
+        bubble.style.filter = 'blur(5px)';
+        
+        // Create unique animation for each bubble
+        const duration = Math.random() * 20 + 10;
+        const xMove = Math.random() * 20 - 10;
+        const yMove = Math.random() * 20 - 10;
+        
+        bubble.animate([
+          { transform: 'translate(0, 0) scale(1)', opacity: Math.random() * 0.5 + 0.1 },
+          { transform: `translate(${xMove}vw, ${yMove}vh) scale(${Math.random() * 0.5 + 0.8})`, opacity: Math.random() * 0.5 + 0.1 },
+          { transform: 'translate(0, 0) scale(1)', opacity: Math.random() * 0.5 + 0.1 }
+        ], {
+          duration: duration * 1000,
+          iterations: Infinity,
+          direction: 'alternate',
+          easing: 'ease-in-out'
+        });
+        
+        backgroundContainer.appendChild(bubble);
+      }
+      
+      // Add sparkles/stars that occasionally twinkle
+      createSparkles();
+    }
+
+    // Create sparkle effect
+    function createSparkles() {
+      const backgroundContainer = document.getElementById('floatingHearts');
+      
+      for (let i = 0; i < 50; i++) {
+        const sparkle = document.createElement('div');
+        const size = Math.random() * 5 + 2;
+        
+        sparkle.className = 'absolute rounded-full';
+        sparkle.style.width = `${size}px`;
+        sparkle.style.height = `${size}px`;
+        sparkle.style.backgroundColor = '#ffffff';
+        sparkle.style.left = `${Math.random() * 100}vw`;
+        sparkle.style.top = `${Math.random() * 100}vh`;
+        sparkle.style.boxShadow = '0 0 10px 2px rgba(255, 255, 255, 0.8)';
+        
+        // Create twinkling animation
+        const delay = Math.random() * 10;
+        
+        sparkle.animate([
+          { opacity: 0.2, boxShadow: '0 0 5px 1px rgba(255, 255, 255, 0.3)' },
+          { opacity: 1, boxShadow: '0 0 15px 3px rgba(255, 255, 255, 0.8)' },
+          { opacity: 0.2, boxShadow: '0 0 5px 1px rgba(255, 255, 255, 0.3)' }
+        ], {
+          duration: Math.random() * 3000 + 2000,
+          iterations: Infinity,
+          delay: delay * 1000,
+          easing: 'ease-in-out'
+        });
+        
+        backgroundContainer.appendChild(sparkle);
+      }
+    }
+
+    // Replace floating hearts with enhanced background
+    function startAnimations() {
+      createEnhancedBackground();
+      // Remove the heart balloons function call
+      // createHeartBalloons(); <- Removed
+      initializeQuoteCarousel();
+      initializeTimeline();
+      setupMemoryGame();
+      setupMusicPlayer();
+      addLoveableInteractions();
+      
+      // Add CSS for gradient animation if not already present
+      if (!document.getElementById('gradientAnimationStyle')) {
+        const style = document.createElement('style');
+        style.id = 'gradientAnimationStyle';
+        style.textContent = `
+          @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+          }
+        `;
+        document.head.appendChild(style);
+      }
+      
+      // Animate title
+      document.getElementById('mainTitle').classList.remove('opacity-0', 'scale-50');
+      
+      // Animate signature
+      setTimeout(() => {
+        document.getElementById('signature').classList.remove('opacity-0');
+        document.getElementById('signature').classList.add('animate-bounce-slow');
+      }, 2000);
+      
+      // Animate play button
+      setTimeout(() => {
+        document.getElementById('playButton').classList.remove('opacity-0');
+        document.getElementById('playButton').classList.add('animate-bounce-slow');
+      }, 3000);
+      
+      // Animate music player
+      setTimeout(() => {
+        const musicPlayer = document.getElementById('musicPlayer');
+        musicPlayer.classList.remove('translate-y-20', 'opacity-0');
+      }, 4000);
+
+      setTimeout(addLoveableInteractions, 5000);
+    }
+
+    // Window resize event for confetti canvas
+    window.addEventListener('resize', function() {
+      const canvas = document.getElementById('confetti');
+      if (canvas) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+    });
+
+    // Initialize everything when the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // If the page is already loaded, start animations
+      if (document.readyState === 'complete') {
+        setTimeout(() => {
+          const loadingScreen = document.getElementById('loadingScreen');
+          loadingScreen.style.opacity = '0';
+          setTimeout(() => {
+            loadingScreen.style.display = 'none';
+            startAnimations();
+          }, 1000);
+        }, 1000);
+      }
+      
+      // Remove the heart balloons container if it exists
+      const heartBalloons = document.getElementById('heartBalloons');
+      if (heartBalloons) {
+        heartBalloons.remove();
+      }
+    });
+  </script>
+</body>
+</html>
